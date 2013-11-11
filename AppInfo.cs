@@ -25,7 +25,7 @@ public class AppInfo
     {
         get
         {
-            return attributes.Length == 0 ? "" : ((AssemblyCompanyAttribute)attributes[0]).Company;
+            return attributes.Length == 0 ? "" : ((AssemblyCompanyAttribute)attributes[5]).Company;
         }
     }
 
