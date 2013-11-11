@@ -152,18 +152,17 @@ public class AppInfo
     /* Methods */
 
     /// <summary>
-    /// Given a format string (which recognizes characters 'M' [major], 'm' [minor], 'b' [build], and 'r' [revision]), this returns
+    /// Given a format string (which recognizes characters 'M' [major], 'm' [minor], 'B' [build], and 'R' [revision]), this returns
     /// a string formatted by this application's Version object's properties.
     /// </summary>
-    /// <param name="fmt">The format string (any characters besides 'M' [major], 'm' [minor], 'b' [build], and 'r' [revision] will
+    /// <param name="fmt">The format string. Any characters besides 'M' (major), 'm' (minor), 'B' (build), and 'R' (revision) will
     /// appear as is.</param>
     /// <returns>A string containing the specified parts of the application's version.</returns>
     public static string GetVersion(string fmt = "M.m")
     {
-        Version ver = Version;
-        return fmt.Replace("M", ver.Major.ToString())
-                  .Replace("m", ver.Minor.ToString())
-                  .Replace("b", ver.Build.ToString())
-                  .Replace("r", ver.Revision.ToString());
+        return fmt.Replace("M", Version.Major.ToString())
+                  .Replace("m", Version.Minor.ToString())
+                  .Replace("B", Version.Build.ToString())
+                  .Replace("R", Version.Revision.ToString());
     }
 }
